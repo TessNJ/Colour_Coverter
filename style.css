@@ -1,0 +1,35 @@
+/* Root */
+/* :root {
+} */
+/* Initial Styling  */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+section {
+  margin-left: 5%;
+  padding: 3%;
+  max-width: 40%;
+  background-color: rgb(222, 222, 222);
+}
+
+/* Styling Input */
+
+/* Styling Colour-Output */
+#colourDiv {
+  /* width: 90%; */
+  margin: auto;
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  border-radius: 1vw;
+  margin: 3% 0;
+  background-color: rgb(0, 0, 0);
+}
+/* Styling Text-Output */
+/* .colourCodes {
+  border-top: 1px solid rgb(64, 64, 64);
+} 
+*/
