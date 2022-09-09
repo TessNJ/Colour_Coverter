@@ -1,19 +1,18 @@
 "use strict";
 //Global Variables
-const Input = document.getElementById("colour");
+const input = document.getElementById("colour");
 //Load Page
 document.addEventListener("DOMContentLoaded", start);
 
 //Setup
 function start() {
   //Add eventListner to detect change in input colour
-  Input.addEventListener("input", logInput);
+  input.addEventListener("input", logInput);
 }
 //Log Input
 function logInput() {
   //Defining Variables
-
-  let newColour = Input.value;
+  let newColour = input.value;
   const divColour = document.getElementById("colourDiv");
   const rgb = document.getElementById("pRGB");
   const hex = document.getElementById("pHex");
@@ -24,17 +23,16 @@ function logInput() {
 
   //Cal and Display RGB
   let rgbHere = hexToRGB(newColour);
-  let rgbString =
-    "rgb(" + rgbHere.r + ", " + rgbHere.g + ", " + rgbHere.b + ")";
-  rgb.innerHTML = rgbString;
+  // let rgbString =
+  //   "rgb(" + rgbHere.r + ", " + rgbHere.g + ", " + rgbHere.b + ")";
+  rgb.innerHTML = rgbToCSS(rgbHere);
 
   //Cal and Display HSL
   let hslNew = rgbToHSL(rgbHere);
   hsl.innerHTML = `hsl(${hslNew.h}, ${hslNew.s}, ${hslNew.l})`;
-  console.log(hslNew);
 
   // Change div Background
-  divColour.style.background = rgbString;
+  divColour.style.background = rgbToCSS(rgbHere);
 }
 
 //Showing Colour (Overall)
@@ -43,8 +41,14 @@ function logInput() {
 //Showing RGB
 //Showing HSL
 
+//RGB to HEX
+
 //RGB to CSS
-//RGB to HSL
+function rgbToCSS(rgbCode) {
+  let rbgString =
+    "rgb(" + rgbCode.r + ", " + rgbCode.g + ", " + rgbCode.b + ")";
+  return rbgString;
+}
 
 //Hex to RGB
 function hexToRGB(hexObj) {
@@ -56,13 +60,11 @@ function hexToRGB(hexObj) {
   green = parseInt(green, 16);
   blue = parseInt(blue, 16);
 
-  let rgb = {
+  return {
     r: red,
     g: green,
     b: blue,
   };
-
-  return rgb;
 }
 
 //RGB to HSL
