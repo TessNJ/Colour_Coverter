@@ -37,7 +37,16 @@ function logInput() {
   divColour.style.background = rgbString;
 }
 
-//RGB to HEX
+//Showing Colour (Overall)
+//Showing Colour Div
+//Showing Hex
+//Showing RGB
+//Showing HSL
+
+//RGB to CSS
+//RGB to HSL
+
+//Hex to RGB
 function hexToRGB(hexObj) {
   let red = hexObj.substring(1, 3).toString();
   let green = hexObj.substring(3, 5).toString();
